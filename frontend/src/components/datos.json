@@ -1,0 +1,47 @@
+[
+  {
+    "id": "GGOEAFKA087499",
+    "image": "https://i.blogs.es/27b569/telefono/450_1000.jpeg",
+    "name": "Android Small Removable Sticker Sheet",
+    "description": "Show your Android pride by placing these 8 fun stickers on your technology products or accessories!",
+    "features": "8 Android stickers \n White colored sticker sheet",
+    "price": 2.99,
+    "cant": 1
+  },
+  {
+    "id": "GGOEAFKA087599",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Rubik's_cube.svg/240px-Rubik's_cube.svg.png",
+    "name": "Android Large Removable Sticker Sheet",
+    "description": "Show your quirky side by placing these fun Android stickers on your personal belongings.",
+    "features": "Android Stickers \n White Colored Sticker Sheet",
+    "price": 2.99,
+    "cant": 12
+  },
+  {
+    "id": "GGOEAFKA087699",
+    "image": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12-pro.jpg",
+    "name": "Xiaomi 12 Pro",
+    "description": "Celular Xiaomi 12T Pro 256GB.",
+    "features": "Tamaño de la pantalla: 6.7 pulgadas \n Cámara posterior: 200MP \n Cámara frontal: 20MP \n Memoria interna: 256GB",
+    "price": 299,
+    "cant": 10
+  },
+  {
+    "id": "GGOEAFKA087799",
+    "image": "https://i.blogs.es/27b569/telefono/450_1000.jpeg",
+    "name": "Android Small Removable Sticker Sheet",
+    "description": "Show your Android pride by placing these 8 fun stickers on your technology products or accessories!",
+    "features": "8 Android stickers \n White colored sticker sheet",
+    "price": 2.99,
+    "cant": 1
+  },
+  {
+    "id": "GGOEAFKA087899",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Rubik's_cube.svg/240px-Rubik's_cube.svg.png",
+    "name": "Android Large Removable Sticker Sheet",
+    "description": "Show your quirky side by placing these fun Android stickers on your personal belongings.",
+    "features": "Android Stickers \n White Colored Sticker Sheet",
+    "price": 2.99,
+    "cant": 1
+  }
+]
