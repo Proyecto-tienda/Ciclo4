@@ -3,6 +3,7 @@ import './App.css';
 import ListaVentas from './components/ListaVentas';
 import MenuNavegacion from './components/MenuNavegacion';
 import Carrito from './components/Carrito';
+import ListaProd from "./components/ListaProd";
 
 function App() {
     return (
@@ -11,7 +12,8 @@ function App() {
             <div className='container p-4'>
                 <Routes>
                     <Route path='/' element={<ListaVentas/>}/>
-                    <Route path='/carrito' element={<Carrito/>}/>
+                    <Route path='/listproducts' element={<ListaProd/>}/>
+                    <Route path='/chart' element={<Carrito/>}/>
                 </Routes>
             </div>
         </div>
