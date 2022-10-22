@@ -65,13 +65,10 @@ const Carrito = () => {
                                         <Card.Text>$ {product.price}</Card.Text>
                                     </Card.Body>
                                     <Card.Footer>
-                                        <Row>
-                                            <InputGroup className="mb-2">
-                                                <InputGroup.Text id={product.cant}>Cant</InputGroup.Text>
-                                                <Form.Control type={"number"} placeholder={product.cant}/>
-                                            </InputGroup>
+                                        <Row className={"text-end"}>
+                                            <Card.Text><h5>Stock: {product.cant}</h5></Card.Text>
                                         </Row>
-                                        <Row>
+                                        <Row className={"mt-2"} hidden={true}>
                                             <Col md={9} className={"justify-content-left"}>
                                                 <ButtonGroup className={"btn-group-sm"}>
                                                     <Button variant="success" onClick={() => {
@@ -82,11 +79,16 @@ const Carrito = () => {
                                                     }}>-</Button>
                                                 </ButtonGroup>
                                             </Col>
-                                            <Col md={3} className={"justify-content-right"}>
+                                            <Col md={3} className={"text-end"}>
                                                 <Button variant={"secondary"} className={"btn-sm"} onClick={() => {
                                                     deleteProduct(product.id)
                                                 }}><i className="fa-solid fa-trash"></i></Button>
                                             </Col>
+                                        </Row>
+                                        <Row className={"mt-2"}>
+                                            <div className="d-grid gap-2">
+                                                <Button variant="primary"><i className="fa-solid fa-money-bill"></i> Comprar</Button>
+                                            </div>
                                         </Row>
                                     </Card.Footer>
                                 </Card>
