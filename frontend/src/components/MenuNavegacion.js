@@ -13,7 +13,7 @@ export const MenuNavegacion = () => {
                     <Link className='nav-link' to="/"><i className="fa-solid fa-sliders"></i> Modificar Productos </Link>
                 </li>
                 <li>
-                    <Link className='nav-link' to="/"><i className="fa-solid fa-list"></i> Lista Ventas </Link>
+                    <Link className='nav-link' to="/listaventas"><i className="fa-solid fa-list"></i> Lista Ventas </Link>
                 </li>
                 <li>
                     <Link className='nav-link' to="/chart"><i className="fa-solid fa-cart-shopping"></i></Link>

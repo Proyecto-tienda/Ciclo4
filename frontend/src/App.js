@@ -7,11 +7,11 @@ import ListaProd from "./components/ListaProd";
 
 function App() {
     return (
-        <div className=''>
+        <div className='container-fluid'>
             <MenuNavegacion/>
             <div className='container p-4'>
                 <Routes>
-                    <Route path='/' element={<ListaVentas/>}/>
+                    <Route path='/listaventas' element={<ListaVentas/>}/>
                     <Route path='/listproducts' element={<Carrito/>}/>
                     <Route path='/chart' element={<ListaProd/>}/>
                 </Routes>
