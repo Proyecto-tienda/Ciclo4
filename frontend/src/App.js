@@ -5,6 +5,7 @@ import MenuNavegacion from './components/MenuNavegacion'
 import ListaProd from './components/ListaProd'
 import Carrito from './components/Carrito'
 import ModificarProductos from './components/ModificarProducto';
+import ListaProdAdmin from "./components/ListaProdAdmin";
 
 
 
@@ -16,6 +17,7 @@ function App() {
                 <Routes>
                     <Route path='/listaventas' element={<ListaVentas />} />
                     <Route path='/listproducts' element={<ListaProd />} />
+                    <Route path='/listproductsadmin' element={<ListaProdAdmin />} />
                     <Route path='/chart' element={<Carrito />} />
                     <Route path='/prueba' element={<ModificarProductos />} />
                 </Routes>
