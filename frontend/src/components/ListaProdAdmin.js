@@ -62,11 +62,11 @@ const ListaProdAdmin = () => {
                                         <Card.Text>{product.category}</Card.Text>
                                         <Card.Text>$ {product.price}</Card.Text>
                                     </Card.Body>
-                                    <Card.Footer hidden={true}>
+                                    <Card.Footer>
                                         <Row className={"text-end"}>
                                             <Card.Text><h5>Stock: {product.cant}</h5></Card.Text>
                                         </Row>
-                                        <Row className={"mt-2"}>
+                                        <Row className={"mt-2"} hidden={true}>
                                             <Col md={9} className={"justify-content-left"}>
                                                 <ButtonGroup className={"btn-group-sm"} >
                                                     <Button variant="success" onClick={() => {
