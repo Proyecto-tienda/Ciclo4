@@ -7,10 +7,13 @@ export const MenuNavegacion = () => {
         <div className={"container-fluid p-2"}>
             <ul className='nav justify-content-center '>
                 <li>
-                    <Link className="nav-link" to="/listproducts"><i className="fa-solid fa-shop"></i> Lista Productos </Link>
+                    <Link className="nav-link" to="/listproducts"><i className="fa-solid fa-shop"></i> Lista Productos Cliente</Link>
                 </li>
                 <li>
-                    <Link className='nav-link' to="/"><i className="fa-solid fa-sliders"></i> Modificar Productos </Link>
+                    <Link className="nav-link" to="/listproductsadmin"><i className="fa-solid fa-shop"></i> Lista Productos Admin</Link>
+                </li>
+                <li>
+                    <Link className='nav-link' to="/prueba"><i className="fa-solid fa-sliders"></i> Modificar Productos </Link>
                 </li>
                 <li>
                     <Link className='nav-link' to="/listaventas"><i className="fa-solid fa-list"></i> Lista Ventas </Link>

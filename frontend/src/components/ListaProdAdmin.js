@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Col, Container, Row, ButtonGroup, InputGroup, Form, Button, Card} from "react-bootstrap";
 import productsJson from "./data/productos.json";
 
-const ListaProd = () => {
+const ListaProdAdmin = () => {
     const [products, setProducts] = useState(productsJson);
     const [newProduct, setNewProduct] = useState({
         id: "",
@@ -68,7 +68,7 @@ const ListaProd = () => {
                                         </Row>
                                         <Row className={"mt-2"} hidden={true}>
                                             <Col md={9} className={"justify-content-left"}>
-                                                <ButtonGroup className={"btn-group-sm"}>
+                                                <ButtonGroup className={"btn-group-sm"} >
                                                     <Button variant="success" onClick={() => {
                                                         product.cant = product.cant++
                                                     }}>+</Button>
@@ -83,11 +83,6 @@ const ListaProd = () => {
                                                 }}><i className="fa-solid fa-trash"></i></Button>
                                             </Col>
                                         </Row>
-                                        <Row className={"mt-2"}>
-                                            <div className="d-grid gap-2">
-                                                <Button variant="primary"><i className="fa-solid fa-money-bill"></i> Comprar</Button>
-                                            </div>
-                                        </Row>
                                     </Card.Footer>
                                 </Card>
                             </Col>
@@ -99,4 +94,4 @@ const ListaProd = () => {
     )
 }
 
-export default ListaProd;
+export default ListaProdAdmin;
