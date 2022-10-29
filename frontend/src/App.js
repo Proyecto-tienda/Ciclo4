@@ -6,6 +6,7 @@ import ListaProd from './components/ListaProd'
 import Carrito from './components/Carrito'
 import ModificarProductos from './components/ModificarProducto';
 import ListaProdAdmin from "./components/ListaProdAdmin";
+import NewProduct from './components/NewProduct';
 
 
 
@@ -20,6 +21,7 @@ function App() {
                     <Route path='/listproductsadmin' element={<ListaProdAdmin />} />
                     <Route path='/chart' element={<Carrito />} />
                     <Route path='/prueba' element={<ModificarProductos />} />
+                    <Route path='/new' element={<NewProduct/>} />
                 </Routes>
             </div>
         </div>

@@ -3,7 +3,7 @@
     "fecha": "27/09/2022",
     "idCliente": "111111",
     "idVenta": "123",
-    "valor": 35,
+    "valor": 350000,
     "confirmado": true,
     "detalleCompra": [
       {
@@ -16,7 +16,7 @@
     "fecha": "28/09/2022",
     "idCliente": "22222",
     "idVenta": "234",
-    "valor": 50,
+    "valor": 50000,
     "confirmado": false,
     "detalleCompra": [
       {
@@ -29,7 +29,7 @@
     "fecha": "29/09/2022",
     "idCliente": "1231",
     "idVenta": "543",
-    "valor": 10,
+    "valor": 115000,
     "confirmado": true,
     "detalleCompra": [
       {

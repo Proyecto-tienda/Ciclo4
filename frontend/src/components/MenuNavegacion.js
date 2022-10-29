@@ -21,6 +21,10 @@ export const MenuNavegacion = () => {
                 <li>
                     <Link className='nav-link' to="/chart"><i className="fa-solid fa-cart-shopping"></i></Link>
                 </li>
+                <li>
+                    <Link className='nav-link' to="/new"><i className="fa-solid fa-sliders"></i> Agregar Producto </Link>
+                </li>
+
             </ul>
         </div>
     </nav>

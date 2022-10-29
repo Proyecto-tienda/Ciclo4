@@ -30,9 +30,10 @@ const ListaVentas = () => {
                     }
                     <tr>
                         <td></td>
-                        <td>Total</td>
-                        <td className={"text-end"}>$ Total</td>
+                        <td> Total</td>
+                        <td className={"text-end"}>Total $ 515.000</td>
                     </tr>
+            
                     </tbody>
                 </Table>
             </Row>
