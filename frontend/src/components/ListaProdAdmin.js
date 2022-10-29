@@ -44,53 +44,61 @@ const ListaProdAdmin = () => {
         setProducts([products, newProduct])
     }
     return (
-        <Container>
-            <Row>
-                {products.map((product) => {
-                        //let {id, image, name, description, features, price, cant} = product
-                        return (
-                            <Col className="d-flex" style={{width: '18rem'}}>
-                                <Card className={"flex-fill mt-2"} key={product.id}>
-                                    <Card.Header>
-                                        <Card.Img variant="top" src={product.image ? product.image : null}
-                                                  className={"rounded mx-auto d-block"}
-                                                  style={{width: '10rem', height: '10rem'}}/>
-                                    </Card.Header>
-                                    <Card.Body>
-                                        <Card.Title>{product.name}</Card.Title>
-                                        <Card.Text>{product.description}</Card.Text>
-                                        <Card.Text>{product.category}</Card.Text>
-                                        <Card.Text>$ {product.price}</Card.Text>
-                                    </Card.Body>
-                                    <Card.Footer>
-                                        <Row className={"text-end"}>
-                                            <Card.Text><h5>Stock: {product.cant}</h5></Card.Text>
-                                        </Row>
-                                        <Row className={"mt-2"} hidden={true}>
-                                            <Col md={9} className={"justify-content-left"}>
-                                                <ButtonGroup className={"btn-group-sm"} >
-                                                    <Button variant="success" onClick={() => {
-                                                        product.cant = product.cant++
-                                                    }}>+</Button>
-                                                    <Button variant="danger" onClick={() => {
-                                                        product.cant = product.cant--
-                                                    }}>-</Button>
-                                                </ButtonGroup>
-                                            </Col>
-                                            <Col md={3} className={"text-end"}>
-                                                <Button variant={"secondary"} className={"btn-sm"} onClick={() => {
-                                                    deleteProduct(product.id)
-                                                }}><i className="fa-solid fa-trash"></i></Button>
-                                            </Col>
-                                        </Row>
-                                    </Card.Footer>
-                                </Card>
-                            </Col>
-                        )
-                    }
-                )}
-            </Row>
-        </Container>
+  <Container>
+  <Row>
+    {products.map((product) => {
+       //let {id, image, name, description, features, price, cant} = product
+ return (
+
+<Col className="d-flex" style={{width: '18rem'}}>
+    <Card className={"flex-fill mt-2"} key={product.id}>
+    <Card.Header>
+    <Card.Img variant="top" src={product.image ? product.image : null}
+  className={"rounded mx-auto d-block"}
+  style={{width: '10rem', height: '10rem'}}/>
+</Card.Header>
+  <Card.Body>
+  <Card.Title>{product.name}</Card.Title>
+  <Card.Text>{product.description}</Card.Text>
+  <Card.Text>{product.category}</Card.Text>
+  <Card.Text>$ {product.price}</Card.Text>
+</Card.Body>
+<Card.Footer>
+<Row className={"text-end"}>
+  <Card.Text><h5>Stock: {product.cant}</h5></Card.Text>
+</Row>
+<Row className={"mt-2"} hidden={true}>
+<Col md={9} className={"justify-content-left"}>
+<ButtonGroup className={"btn-group-sm"} >
+   <Button variant="success" onClick={() => {
+   product.cant = product.cant++
+   }}>+</Button>
+<Button variant="danger" onClick={() => {
+     product.cant = product.cant--
+   }}>-</Button>
+</ButtonGroup>
+</Col>
+   <Col md={3} className={"text-end"}>
+   <Button variant={"secondary"} className={"btn-sm"} onClick={() => {
+        deleteProduct(product.id)
+    }}><i className="fa-solid fa-trash"></i></Button>
+     </Col>
+    </Row>
+   
+ </Card.Footer>
+</Card></Col>
+    )
+   }
+ )}
+ 
+ <Row className={"mt-2"}>
+    <div className="d-grid gap-2">
+     <Button variant="primary" size="lg"><i className="fa-solid fa-sliders"></i> Agregar Producto </Button>
+    </div>
+    </Row>
+ </Row>
+
+ </Container>
     )
 }
 
