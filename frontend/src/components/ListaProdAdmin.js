@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {Col, Container, Row, ButtonGroup, InputGroup, Form, Button, Card} from "react-bootstrap";
 import productsJson from "./data/productos.json";
+import NewProduct from "./NewProduct"
+import {Link} from "react-router-dom"
 
 const ListaProdAdmin = () => {
     const [products, setProducts] = useState(productsJson);
@@ -91,12 +93,16 @@ const ListaProdAdmin = () => {
    }
  )}
  
- <Row className={"mt-2"}>
-    <div className="d-grid gap-2">
-     <Button variant="primary" size="lg"><i className="fa-solid fa-sliders"></i> Agregar Producto </Button>
-    </div>
-    </Row>
- </Row>
+
+ <div className="d-grid gap-2">
+ <button type="button" class="btn btn-primary m-3 col-4 mx-auto" to="/NewProduct" size="sm" data-bs-toggle="button">Agregar Producto</button>
+<Link to="/NewProduct"></Link>
+</div>
+ 
+ 
+
+</Row>
+
 
  </Container>
     )
