@@ -8,14 +8,14 @@ return (
    <Fragment>
    <productsJson title={'Nuevo Producto'} />
  <div className="row">   
-    <div className="col-12 col-md-2">
+    <div className="col-12 col-md-3">
 
     </div>
 
- <div className="col-12 col-md-10">
+ <div className="col-12 col-md-7">
     <Fragment>
- <div className="wrapper my-5">
-  <form className="shadow-lg"  encType='multipart/form-data'>
+ <div className="wrapper">
+  <form className="col-md-11"  encType='multipart/form-data'>
  <h1 className="mb-4">Nuevo Producto</h1>
 
  <div className="form-group">
@@ -32,7 +32,7 @@ return (
     <input
         type="text"
         id="price_field"
-        className="form-control"                                   
+        className="form-control"                                    
 />
 </div>
 
@@ -46,6 +46,7 @@ return (
    <select className="form-control" id="category_field">
 
 </select></div>
+
 <div className="form-group">
  <label htmlFor="stock_field">Stock</label>
     <input
