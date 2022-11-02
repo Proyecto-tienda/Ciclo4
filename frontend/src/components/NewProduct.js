@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
+import {Button} from "react-bootstrap";
 
 
 const NewProduct = () => {
-
+ 
 
 return (
    <Fragment>
@@ -53,6 +54,7 @@ return (
         type="number"
         id="stock_field"
         className="form-control"
+        
  /></div>
 
 <div className='form-group'>
@@ -70,6 +72,8 @@ return (
          Seleccione Imagen
 </label>
 </div></div>
+
+ <Button type='sudmit' className="btn btn-primary btn-block mt-3"><i className=" m-1 fa fa-check"></i>Guardar</Button>
 
 </form>
 </div>

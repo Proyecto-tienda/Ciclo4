@@ -10,7 +10,7 @@ export const MenuNavegacion = () => {
                     <Link className="nav-link" to="/listproducts"><i className="fa-solid fa-shop"></i> Lista Productos Cliente</Link>
                 </li>
                 <li>
-                    <Link className="nav-link" to="/listproductsadmin"><i className="fa-solid fa-shop"></i> Lista Productos Admin</Link>
+                    <Link className="nav-link" to="/listproductsadmin"><i className="fa-solid fa fa-list"></i> Lista Productos Admin</Link>
                 </li>
                 <li>
                     <Link className='nav-link' to="/prueba"><i className="fa-solid fa-sliders"></i> Modificar Productos </Link>
@@ -20,9 +20,6 @@ export const MenuNavegacion = () => {
                 </li>
                 <li>
                     <Link className='nav-link' to="/chart"><i className="fa-solid fa-cart-shopping"></i></Link>
-                </li>
-                <li>
-                    <Link className='nav-link' to="/new"><i className="fa-solid fa-sliders"></i> Agregar Producto </Link>
                 </li>
 
             </ul>

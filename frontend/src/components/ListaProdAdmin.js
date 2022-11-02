@@ -86,26 +86,21 @@ const ListaProdAdmin = () => {
     }}><i className="fa-solid fa-trash"></i></Button>
      </Col>
     </Row>
-   
  </Card.Footer>
 </Card></Col>
     )
    }
  )}
  
-
+ 
  <div className="d-grid gap-2">
- <button type="button" class="btn btn-primary m-3 col-4 mx-auto" to="/NewProduct" size="sm" data-bs-toggle="button">Agregar Producto</button>
-<Link to="/NewProduct"></Link>
+ <Button variant="outlined" size="sm"><Link className="btn btn-primary m-3  col-4 mx-auto" to="/new"><i></i> Agregar producto</Link> </Button>
 </div>
- 
- 
 
 </Row>
-
-
+ 
  </Container>
-    )
+ )
 }
 
 export default ListaProdAdmin;
