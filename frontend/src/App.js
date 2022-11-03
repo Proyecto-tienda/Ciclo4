@@ -7,6 +7,7 @@ import Carrito from './components/Carrito'
 import ModificarProductos from './components/ModificarProducto';
 import ListaProdAdmin from "./components/ListaProdAdmin";
 import NewProduct from './components/NewProduct';
+import ModificarProduct from './components/FormularioModificar';
 
 
 
@@ -22,6 +23,7 @@ function App() {
                     <Route path='/chart' element={<Carrito />} />
                     <Route path='/prueba' element={<ModificarProductos />} />
                     <Route path='/new' element={<NewProduct/>} />
+                    <Route path='/modificar' element={<ModificarProduct/>} />
                 </Routes>
             </div>
         </div>

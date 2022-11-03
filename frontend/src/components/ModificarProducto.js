@@ -1,6 +1,8 @@
 import {Container, Row, Table, Image, Button} from "react-bootstrap";
 import React, {useState} from "react";
 import productsJson from "./data/productos.json";
+import {Link} from "react-router-dom"
+
 
 export const ModificarProductos = () => {
     const [products, setProducts] = useState(productsJson);
@@ -46,12 +48,13 @@ export const ModificarProductos = () => {
                                         <td className={"text-end"}>{product.cant}</td>
                                         <td>
                                             <Container>
-                                                <Row>
-                                                    <Button variant="primary" size="sm">Modificar</Button>
-                                                </Row>
+
+     <div className="d-grid gap-2">
+    <Button variant="outlined" size="sm"><Link className="btn btn-primary mx-auto" to="/modificar"><i></i>Modificar</Link> </Button>
+    </div>
                                                 <Row className={"pt-2"}>
-                                                    <Button variant="danger" size="sm">Eliminar</Button>
-                                                </Row>
+                                                <Button variant="danger col-9 mx-auto" size="sm">Eliminar</Button>
+                                                </Row>    
                                             </Container>
                                         </td>
                                     </tr>

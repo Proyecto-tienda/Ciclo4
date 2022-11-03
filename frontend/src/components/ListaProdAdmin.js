@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Col, Container, Row, ButtonGroup, InputGroup, Form, Button, Card} from "react-bootstrap";
 import productsJson from "./data/productos.json";
-import NewProduct from "./NewProduct"
 import {Link} from "react-router-dom"
 
 const ListaProdAdmin = () => {
