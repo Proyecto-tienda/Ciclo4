@@ -57,16 +57,18 @@ exports.newProduct=async(req,res,next)=>{
 }
 
 //Eliminar producto
-exports.deleteProduct= catchAsyncErrors(async (req,res,next) =>{
-    const product= await producto.findById(req.params.id) 
-   
+exports.deleteProduct= async (req,res,next) => {
+    const product= await producto.findById(req.params.id)
     if (!product){
-        return next(new ErrorHandler("Producto no encontrado", 404))
-    }
+        return res.status(404).json({
+        success:false,
+        message: "No encontramos ese producto"
+        })
+}
 
     await product.remove();
     res.status(200).json({
         success:true,
         message:"Producto eliminado correctamente"
     })
-})
+}
