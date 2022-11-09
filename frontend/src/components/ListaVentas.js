@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Table, Button, Row, Col, Container, Image} from "react-bootstrap";
+import {Table, Button, Row, Container, Image} from "react-bootstrap";
 import ventasJson from "./data/ventas.json";
 
 const ListaVentas = () => {

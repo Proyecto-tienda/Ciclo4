@@ -72,3 +72,4 @@ exports.deleteProduct= async (req,res,next) => {
         message:"Producto eliminado correctamente"
     })
 }
+
