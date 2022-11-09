@@ -1,5 +1,5 @@
 const cartSchema = require("../models/cart")
-
+const product = require("../models/productos")
 //View products in cart.
 exports.getCart = async (res,next) => {
     const cart =  await cartSchema.find()
@@ -24,7 +24,7 @@ exports.AddProductToCart = async(req,res) => {
     const IsProduct = await product.findOne({ name });
 
     //Values to cart not empy.
-    const notEmpy = name !== "" && img !== "" && price !== "";
+    const notEmpy = (name !== "" && img !== "" && price !== "");
 
     //Is Product in the cart?
     const IsInTheCart = await cartSchema.findOne({ name });

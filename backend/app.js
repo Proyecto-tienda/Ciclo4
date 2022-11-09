@@ -9,5 +9,5 @@ const productos=require("./routes/products")
 const cart = require('./routes/carts')
 
 app.use('/api',productos) //Sujeto a decision (ruta del navegador)
-app.use('/cart',cart)
+app.use('/c',cart)
 module.exports=app
