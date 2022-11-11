@@ -1,4 +1,5 @@
 const producto=require("../models/productos")
+//const fetch = (url) => import('node-fetch').then(({ default: fetch }) => fetch(url));
 
 //Ver la lista de productos
 exports.getProducts= async (req,res,next) =>{
@@ -73,3 +74,18 @@ exports.deleteProduct= async (req,res,next) => {
     })
 }
 
+// //Ver todos los productos con FETCH
+// function verProductos() {
+//     fetch('http://localhost:4000/api/productos')
+//         .then(res => res.json())
+//         .then(res => console.log(res))
+//         .catch(err => console.error(err))
+// }
+
+// //Ver producto por id con FETCH
+// function verProductoPorID(id) {
+//     fetch('http://localhost:4000/api/producto/' + id)
+//         .then(res => res.json())
+//         .then(res => console.log(res))
+//         .catch(err => console.error(err))
+// }

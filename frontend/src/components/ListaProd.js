@@ -1,102 +1,58 @@
-import React, {useState} from "react";
-import {Col, Container, Row, ButtonGroup, InputGroup, Form, Button, Card} from "react-bootstrap";
-import productsJson from "./data/productos.json";
+import React, {useEffect} from "react";
+import {Col, Container, Row, Button, Card} from "react-bootstrap";
+import { useDispatch, useSelector } from 'react-redux'
+import { getProducts } from '../actions/productActions'
 
 const ListaProd = () => {
-    const [products, setProducts] = useState(productsJson);
-    const [newProduct, setNewProduct] = useState({
-        id: "",
-        image: "",
-        name: "",
-        description: "",
-        category: "",
-        price: 0,
-        cant: 0
-    })
-    const editId = (idlp) => {
-        setNewProduct({id: idlp})
-    }
-    const editImage = (imagelp) => {
-        setNewProduct({image: imagelp})
-    }
-    const editName = (namelp) => {
-        setNewProduct({name: namelp})
-    }
-    const editDescription = (descriptionlp) => {
-        setNewProduct({description: descriptionlp})
-    }
-    const editCategory = (categorylp) => {
-        setNewProduct({category: categorylp})
-    }
-    const editPrice = (pricelp) => {
-        setNewProduct({price: pricelp})
-    }
-    const editCant = (cantlp) => {
-        setNewProduct({cant: cantlp})
-    }
-    const deleteProduct = (id) => {
-        const listProductsNew = products.filter(
-            (product) => (product.id !== id)
-        )
-        setProducts(listProductsNew)
-    }
-    const addProduct = () => {
-        setProducts([products, newProduct])
-    }
+
+    const {products} = useSelector(state => state.products)
+ 
+    const dispatch = useDispatch();
+    useEffect(() => {
+         dispatch(getProducts());
+    },[dispatch])
+
+   
     return (
         <Container>
             <Row>
-                {products.map((product) => {
+            {products && products.map(producto => (
                         //let {id, image, name, description, features, price, cant} = product
-                        return (
+                        
                             <Col className="d-flex" style={{width: '18rem'}}>
-                                <Card className={"flex-fill mt-2"} key={product.id}>
+                                <Card className={"flex-fill mt-2"} key={producto.id}>
                                     <Card.Header>
-                                        <Card.Img variant="top" src={product.image ? product.image : null}
+                                        <Card.Img variant="top" src={producto.imagen[0].url} alt={producto.imagen[0].public_id}
                                                   className={"rounded mx-auto d-block"}
                                                   style={{width: '10rem', height: '10rem'}}/>
                                     </Card.Header>
                                     <Card.Body>
-                                        <Card.Title>{product.name}</Card.Title>
-                                        <Card.Text>{product.description}</Card.Text>
-                                        <Card.Text>{product.category}</Card.Text>
-                                        <Card.Text>$ {product.price}</Card.Text>
+                                        <Card.Title>{producto.nombre}</Card.Title>
+                                        <Card.Text>{producto.descripcion}</Card.Text>
+                                        <Card.Text>{producto.categoria}</Card.Text>
+                                        <Card.Text>$ {producto.precio}</Card.Text>
                                     </Card.Body>
                                     <Card.Footer>
                                         <Row className={"text-end"}>
-                                            <Card.Text><h5>Stock: {product.cant}</h5></Card.Text>
+                                            <Card.Text><h5>Stock: {producto.inventario}</h5></Card.Text>
                                         </Row>
-                                        <Row className={"mt-2"} hidden={true}>
-                                            <Col md={9} className={"justify-content-left"}>
-                                                <ButtonGroup className={"btn-group-sm"}>
-                                                    <Button variant="success" onClick={() => {
-                                                        product.cant = product.cant++
-                                                    }}>+</Button>
-                                                    <Button variant="danger" onClick={() => {
-                                                        product.cant = product.cant--
-                                                    }}>-</Button>
-                                                </ButtonGroup>
-                                            </Col>
-                                            <Col md={3} className={"text-end"}>
-                                                <Button variant={"secondary"} className={"btn-sm"} onClick={() => {
-                                                    deleteProduct(product.id)
-                                                }}><i className="fa-solid fa-trash"></i></Button>
-                                            </Col>
-                                        </Row>
+                                        
                                         <Row className={"mt-2"}>
                                             <div className="d-grid gap-2">
                                                 <Button variant="primary"><i className="fa-solid fa-money-bill"></i> Comprar</Button>
                                             </div>
                                         </Row>
                                     </Card.Footer>
+
+                                
                                 </Card>
                             </Col>
                         )
-                    }
-                )}
+                        )}
             </Row>
         </Container>
     )
+    
 }
 
 export default ListaProd;

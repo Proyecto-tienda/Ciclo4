@@ -77,32 +77,12 @@ const ListaProdAdmin = () => {
                                     <Card.Text>$ {product.price}</Card.Text>
                                 </Card.Body>
                                 <Card.Footer>
-                                    <Row className={"text-end"}>
-                                        <Card.Text><h5>Stock: {product.cant}</h5></Card.Text>
-                                    </Row>
-                                    <Row className={"mt-2"} hidden={true}>
-                                        <Col md={9} className={"justify-content-left"}>
-                                            <ButtonGroup className={"btn-group-sm"} >
-                                                <Button variant="success" onClick={() => {
-                                                    product.cant = product.cant++
-                                                }}>+</Button>
-                                                <Button variant="danger" onClick={() => {
-                                                    product.cant = product.cant--
-                                                }}>-</Button>
-                                            </ButtonGroup>
-                                        </Col>
-                                        <Col md={3} className={"text-end"}>
-                                            <Button variant={"secondary"} className={"btn-sm"} onClick={() => {
-                                                deleteProduct(product.id)
-                                            }}><i className="fa-solid fa-trash"></i></Button>
-                                        </Col>
-                                    </Row>
+                                   
                                 </Card.Footer>
                             </Card></Col>
                     )
                 }
                 )}
-
 
                 <div className="d-grid gap-2">
                     <Button variant="outlined" size="sm"><Link className="btn btn-primary m-3  col-4 mx-auto" to="/new"><i></i> Agregar producto</Link> </Button>
