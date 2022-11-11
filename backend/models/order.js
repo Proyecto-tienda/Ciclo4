@@ -25,7 +25,29 @@ const orderSchema = mongoose.Schema({
         required: true,
         ref: "auth"
     },
-    items: [
+    items: [{
+        nombre: {
+            type: String,
+            required: true
+        },
+        cantidad: {
+            type: Number,
+            required: true
+        },
+        imagen: {
+            type: String,
+            required: true
+        },
+        precio: {
+            type: Number,
+            required: true
+        },
+        id_product: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: "productos"
+        }
+    }
     ],
     pagoInfo: {
         id: {
