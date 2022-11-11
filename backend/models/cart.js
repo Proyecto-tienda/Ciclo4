@@ -1,3 +1,4 @@
+const { json } = require("express")
 const { model , Schema, default: mongoose }= require("mongoose")
 
 const CartSchema = new Schema({
@@ -11,17 +12,27 @@ const CartSchema = new Schema({
             type : Number, 
             required : true
         },
-    img:
-        {
-            type: Number,
-            required: true
-        
-        },
+    imagen:[
+            {
+                public_id:{
+                    type:String,
+                    required:true
+                },
+                url:{
+                    type:String,
+                    required:true
+                }
+            }
+    ],
     price:
         {
             type: Number, 
             required: true
-        }
+        },
+    id_producto : {
+        type: mongoose.Schema.Types.ObjectId,
+        required : true
+    }
 
         
      })

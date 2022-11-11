@@ -18,38 +18,35 @@ exports.getCart = async (res,next) => {
 //Add products to cart.
 
 exports.AddProductToCart = async(req,res) => {
-    const {name, img, price} = req.body;
+   
+    const { id } = req.body;   
 
     //Does this product exist?
-    const IsProduct = await product.findOne({ name });
+    const IsProduct = await product.findById( id );
 
-    //Values to cart not empy.
-    const notEmpy = (name !== "" && img !== "" && price !== "");
 
     //Is Product in the cart?
-    const IsInTheCart = await cartSchema.findOne({ name });
+    const IsInTheCart = await cartSchema.findOne({ id });
 
 
     //If product doesn´t exist
     if(!IsProduct){
-        res.status(400).json({
+        res.status(404).json({
             mensaje:'El producto no existe o no esta disponible'
         });
-    }
-    else if(notEmpy && !IsInTheCart){
-        const newProductInCart = new cartSchema({name, img, price, amount : 1});     
+    }else if(IsInTheCart){
+        ProductCart = await cartSchema.findByIdAndUpdate( id ,{ $inc :{amount : 1 }}, { new:true })
+        res.status(200).json({
+            mensaje: "se añadio otro elemento del producto"
+        });
+    }else {
+        const {_id, nombre , imagen, precio } = IsProduct
+        const newProductInCart =new cartSchema({name: nombre,imagen : imagen,price:precio ,id_producto:_id, amount : 1});     
+        console.log(newProductInCart)
         newProductInCart.save()
         res.status(200).json({
             mensaje : 'Producto agregado al carrito'
         })
-    }
-    else if(IsInTheCart){
-        ProductCart = await cartSchema.findOneAndUpdate({ name },{ $inc :{amount : 1 }}, { new:true })
-        res.status(200).json({
-            mensaje: "se añadio otro elemento del producto"
-        });
-    }
-
 }
 
 //Delete product to Cart.
@@ -73,10 +70,7 @@ exports.deleteProduct= async (req,res) => {
                 mesaje : 'Se elimino del carrito el producto'
             })
 
+            }
         }
     }
-
-
-
-    
-}
+} 
