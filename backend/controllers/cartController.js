@@ -1,7 +1,14 @@
 const cartSchema = require("../models/cart")
 const product = require("../models/productos")
 //View products in cart.
-exports.getCart = async (res,next) => {
+exports.getCart = async (req,res,next) => {
+    const carts =  await cartSchema.find()
+    res.status(200).json({
+        sucess:true,
+        carts
+    })
+}
+/*exports.getCart = async (res,next) => {
     const cart =  await cartSchema.find()
     if (!cart){
         return res.status(200).json({
@@ -13,7 +20,7 @@ exports.getCart = async (res,next) => {
         sucess:true,
         cart
     })
-}
+}*/
 
 //Add products to cart.
 
