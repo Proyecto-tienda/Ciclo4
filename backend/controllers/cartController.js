@@ -78,12 +78,26 @@ exports.confirm = async (req, res) => {
     const carts = await cartSchema.find()
     let total = 0;
     let price = 0;
-    for (cart of carts){
-        price= cart.amount * cart.price
-        total = total +price
+    for (cart of carts) {
+        price = cart.amount * cart.price
+        total = total + price
     }
     res.status(200).json({
         sucess: true,
         mensaje: "Desea confirmar su compra por un valor de $" + total + "?"
+    })
+}
+
+//Restar existencias
+exports.compraRealizada = async (req, res) => {
+    const carts = await cartSchema.find()
+    for (cart of carts) {
+        let producto = await product.findByIdAndUpdate(cart.id_producto, {$inc: {inventario: -cart.amount}});
+    }
+    const productos = await product.find({inventario:{$ne:0}});
+    res.status(200).json({
+        sucess: true,
+        mensaje: "Compra realizada exitosamente",
+        productos
     })
 }
