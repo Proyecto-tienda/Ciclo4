@@ -17,36 +17,36 @@ exports.AddProductToCart = async (req, res) => {
 
     //Does this product exist?
     const IsProduct = await product.findById(id);
-
-
     //Is Product in the cart?
-    const IsInTheCart = await cartSchema.findOne({id});
+    const IsInTheCart = await cartSchema.findOne({id_producto: id});
 
-
-    //If product doesn´t exist
-    if (!IsProduct) {
-        res.status(404).json({
-            mensaje: 'El producto no existe o no esta disponible'
-        });
-    } else if (IsInTheCart) {
-        ProductCart = await cartSchema.findByIdAndUpdate(id, {$inc: {amount: 1}}, {new: true})
-        res.status(200).json({
-            mensaje: "se añadio otro elemento del producto"
-        });
+    if (IsProduct) {
+        if (!IsInTheCart) {
+            const {_id, nombre, imagen, precio} = IsProduct
+            const newProductInCart = await cartSchema.create({
+                name: nombre,
+                imagen: imagen,
+                price: precio,
+                id_producto: _id,
+                amount: 1
+            })
+            res.status(200).json({
+                mensaje: 'Producto agregado al carrito',
+                newProductInCart
+            })
+        } else {
+            let productCart = await cartSchema.findOneAndUpdate({id_producto: id}, {$inc: {amount: 1}})
+            res.status(200).json({
+                mensaje: "Se añadio otro elemento del producto",
+                productCart
+            });
+        }
     } else {
-        const {_id, nombre, imagen, precio} = IsProduct
-        const newProductInCart = new cartSchema({
-            name: nombre,
-            imagen: imagen,
-            price: precio,
-            id_producto: _id,
-            amount: 1
-        });
-        newProductInCart.save()
-        res.status(200).json({
-            mensaje: 'Producto agregado al carrito'
+        res.status(404).json({
+            mensaje: 'El producto no fue encontrado'
         })
     }
+
 }
 
 //Delete product to Cart.
@@ -94,10 +94,11 @@ exports.compraRealizada = async (req, res) => {
     for (cart of carts) {
         let producto = await product.findByIdAndUpdate(cart.id_producto, {$inc: {inventario: -cart.amount}});
     }
-    const productos = await product.find({inventario:{$ne:0}});
+    const productos = await product.find({inventario: {$ne: 0}});
     res.status(200).json({
         sucess: true,
         mensaje: "Compra realizada exitosamente",
         productos
     })
+    //const DeleteCart = await cartSchema.deleteMany();
 }
