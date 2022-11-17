@@ -1,9 +1,10 @@
 const express=require("express")
 const router=express.Router();
 
-const {getProducts, newProduct, getProductById, updateProduct, deleteProduct} = require("../controllers/productsController")
+const {getProducts, newProduct, getProductById, updateProduct, deleteProduct, getProductsInStock} = require("../controllers/productsController")
 
 router.route('/productos').get(getProducts)//obtener todos los productos
+router.route('/stock').get(getProductsInStock)//obtener todos los productos en stock
 router.route('/producto/nuevo').post(newProduct);//crear un producto
 router.route('/producto/:id').get(getProductById); //Consultar un producto por id
 router.route('/producto/:id').put(updateProduct);//actualizar un producto por id

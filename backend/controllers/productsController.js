@@ -10,6 +10,16 @@ exports.getProducts= async (req,res,next) =>{
     })
 }
 
+//Ver la lista de productos
+exports.getProductsInStock= async (req,res,next) =>{
+    const productos = await producto.find({inventario:{$ne:0}});
+    res.status(200).json({
+        sucess:true,
+        cantidad: productos.length,
+        productos
+    })
+}
+
 //Ver un producto por ID
 exports.getProductById= async (req, res, next)=>{
     const product= await producto.findById(req.params.id)
