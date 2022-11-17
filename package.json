@@ -1,33 +1,36 @@
 {
-  "name": "tienda",
+  "name": "vetyshop",
   "version": "1.0.0",
-  "description": "Tienda virtual",
+  "description": "Tienda virtual de productos para mascotas",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
-    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server"
+    "start": "node back/server.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon back/server",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon back/server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Proyecto-tienda/Ciclo4.git"
+    "url": "git+https://github.com/OZZYTA/VetyShop.git"
   },
-  "author": "Web VIP",
+  "author": "Natali Velasquez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Proyecto-tienda/Ciclo4/issues"
+    "url": "https://github.com/OZZYTA/VetyShop/issues"
   },
-  "homepage": "https://github.com/Proyecto-tienda/Ciclo4#readme",
+  "homepage": "https://github.com/OZZYTA/VetyShop#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cloudinary": "^1.32.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.7.1",
-    "react-helmet": "^6.1.0",
-    "react-redux": "^8.0.5",
-    "react-router-dom": "^6.4.3",
-    "redux": "^4.2.0",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.2"
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.2",
+    "node-fetch": "^3.2.10",
+    "nodemailer": "^6.8.0",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
