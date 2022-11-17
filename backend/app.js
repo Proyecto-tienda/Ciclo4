@@ -5,9 +5,12 @@ app.use(express.json());
 
 //Importar rutas
 const productos=require("./routes/products")
-
 const cart = require('./routes/carts')
+const ordenes=require("./routes/orders")
 
 app.use('/api',productos) //Sujeto a decision (ruta del navegador)
 app.use('/c',cart)
+app.use('/api', ordenes)
+
+
 module.exports=app

@@ -8,20 +8,6 @@ exports.getCart = async (req,res,next) => {
         carts
     })
 }
-/*exports.getCart = async (res,next) => {
-    const cart =  await cartSchema.find()
-    if (!cart){
-        return res.status(200).json({
-        success:true,
-        message: 'No hay productos agregado al carrito',
-    })
-}
-    res.status(200).json({
-        sucess:true,
-        cart
-    })
-}*/
-
 //Add products to cart.
 
 exports.AddProductToCart = async(req,res) => {
