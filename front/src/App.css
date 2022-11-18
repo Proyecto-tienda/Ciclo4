@@ -53,6 +53,7 @@ f
 #login_btn,
 #view_btn {
   background-color: #22159b;
+  color: white;
   padding: 0.4rem 1.8rem;
 }
 
@@ -440,7 +441,7 @@ footer {
 
 .user-info h4 {
   font-weight: 800;
-  color: grey;
+  color: #22159b;
   margin-top: 2rem;
 }
 
@@ -449,8 +450,8 @@ footer {
 }
 
 #edit_profile {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #22159b;
+  border-color: #22159b;
 }
 
 /* Confirm Order */
@@ -461,8 +462,8 @@ footer {
 }
 
 .update-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color:#22159b;
+  border-color: #22159b;
   color: white;
 }
 
@@ -472,16 +473,16 @@ footer {
 
 /* Pagination */
 .page-item.active .page-link {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #22159b;
+  border-color: #22159b;
 }
 
 .page-link {
-  color: #fa9c23;
+  color: #22159b;
 }
 
 .page-link:hover {
-  color: #fa9c23;
+  color:#22159b;
 }
 
 /* Admin Sidebar */
@@ -537,8 +538,8 @@ footer {
 
 #sidebar ul li.active > a,
 a[aria-expanded='true'] {
-  color: #fff;
-  background: #232f3e;
+  color: darkblue;
+  background: #f2f3f6ed;
 }
 a[data-toggle='collapse'] {
   position: relative;
