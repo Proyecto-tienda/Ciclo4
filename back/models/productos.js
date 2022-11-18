@@ -58,26 +58,7 @@ const productosSchema=mongoose.Schema({
         maxLength:[5,"Cantidad maxima del producto no puede sobrepasar 99999"],
         default:0
     },
-    numCalificaciones:{
-        type:Number,
-        default:0
-    },
-    opiniones:[
-        {
-            nombreCliente:{
-                type:String,
-                required:true
-            },
-            rating:{
-                type:Number,
-                required:true
-            },
-            comentario:{
-                type:String,
-                required:true
-            }
-        }
-    ],
+    
     user:{
         type: mongoose.Schema.ObjectId,
         ref: 'User',

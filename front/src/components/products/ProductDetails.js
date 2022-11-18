@@ -14,7 +14,7 @@ export const ProductDetails = () => {
     const params= useParams();
     const [quantity, setQuantity] = useState(1)
     const [rating, setRating] = useState(0);
-    const [comentario, setComentario] = useState('');
+
 
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -107,7 +107,7 @@ export const ProductDetails = () => {
     const formData = new FormData();
 
     formData.set('rating', rating);
-    formData.set('comentario', comentario);
+    // formData.set('comentario', comentario);
     formData.set('idProducto', params.id);
 
     dispatch(newReview(formData));
@@ -133,13 +133,12 @@ export const ProductDetails = () => {
             <div className='col-12 col-lg-5 mt-5'>
               <h3>{product.nombre}</h3>
               <p id="product_id">ID del Producto {product._id}</p>
-              <hr />
-
+              {/* <hr />
               <div className='rating-outer'>
                 <div className="rating-inner" style={{ width: `${(product.calificacion / 5) * 100}%` }}></div>
               </div>
               <span id="No_de_reviews">  ({product.numCalificaciones} Reviews)</span>
-              <hr />
+              <hr /> */}
               <p id="precio_producto">${product.precio}</p>
               <div className="stockCounter d-inline">
                 <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
@@ -153,14 +152,14 @@ export const ProductDetails = () => {
               <h4 className="mt-2">Descripción:</h4>
               <p>{product.descripcion}</p>
               <hr />
-              <p id="vendedor">Vendido por: <strong>{product.vendedor}</strong></p>
+              {/* <p id="vendedor">Vendido por: <strong>{product.vendedor}</strong></p> */}
 
-              {user ?
+              {/* {user ?
                 <button id="btn_review" type="button" className="btn btn-primary mt-4"
                   data-toggle="modal" data-target="#ratingModal" onClick={setUserRatings}>Deja tu Opinion</button>
                 :
                 <div className="alert alert-danger mt-5" type="alert">Inicia Sesión para dejar tu review</div>
-              }
+              } */}
 
               {/*Mensaje emergente para dejar opinion y calificacion*/}
               <div className="row mt-2 mb-5">
@@ -184,12 +183,12 @@ export const ProductDetails = () => {
                             <li className="star"><i className="fa fa-star"></i></li>
                           </ul>
 
-                          <textarea name="review" 
+                          {/* <textarea name="review" 
                           id="review" 
                           className="form-control mt3"
                           value={comentario}
                           onChange={(e) => setComentario(e.target.value)}
-                          ></textarea>
+                          ></textarea> */}
 
                           <button className="btn my-3 float-right review-btn px-4 text-white"
                             onClick={reviewHandler} data-dismiss="modal" aria-label="Close">Enviar</button>
