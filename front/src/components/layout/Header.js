@@ -20,10 +20,10 @@ const Header = () => {
     }
     return (
         <Fragment>
-            <nav className='navbar row'>
+            <nav className='navbar navbar-light bg-light'>
                 <div className='col-12 col-md-3'>
                     <div className='navbar-brand'>
-                        <Link to="/" ><img src="../images/vetyshop.png" alt="Vety Shop Store Logo"></img></Link>
+                        <Link to="/" ><img src="../images/logo5-.png" alt="ElectroWeb" id="logo_size"></img></Link>
                     </div>
                 </div>
 
@@ -33,12 +33,12 @@ const Header = () => {
                 </div>
                 {/*Boton inicio sesión*/}
                 <div className="col-12 col-md-4 mt-4 mt-md-0 text-center">
-                    <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
+                    <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-dark" aria-hidden="false"></i>
                         <span className="ml-1" id="cart_count">{cartItems.length}</span></Link>
 
                     {user ? (
                         <div className="ml-4 dropdown d-inline">
-                            <Link to="#!" className="btn dropdown-toggle text-white mr-4" type="button"
+                            <Link to="#!" className="btn dropdown-toggle text-dark mr-4" type="button"
                                 id="dropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <figure className='avatar avatar-nav'>
                                     <img
@@ -54,12 +54,12 @@ const Header = () => {
                                     <Link className="dropdown-item" to="/dashboard">Adm. Productos</Link>
                                 )}
 
-                                <Link className="dropdown-item" to="/myOrders">Pedidos</Link>
+                                <Link className="dropdown-item" to="/">Pedidos</Link>
                                 <Link className="dropdown-item" to="/yo">Mi Perfil</Link>
                                 <Link className="dropdown-item" to="/" onClick={logoutHandler}>Cerrar Sesion</Link>
                             </div>
                         </div>
-                    ) : !loading && <Link to="/login" className='btn ml-4' id="login_btn">Login</Link>}
+                    ) : !loading && <Link to="/login" className='btn ml-4'  id="login_btn">Login</Link>}
 
 
                 </div>

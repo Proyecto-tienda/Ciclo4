@@ -31,7 +31,7 @@ export const Profile = () => {
                             <h4>Email</h4>
                             <p>{user.email}</p>
 
-                            <h4>Registrado el: </h4>
+                            <h4>Fecha de Registro</h4>
                             <p>{String(user.fechaRegistro).substring(0, 10)}</p>
 
                             {user.role !== 'admin' && (
