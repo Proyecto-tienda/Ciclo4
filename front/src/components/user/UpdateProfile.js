@@ -100,7 +100,7 @@ export const UpdateProfile = () => {
                         </div>
 
                         <div className='form-group'>
-                            <label htmlFor='avatar_upload'>Avatar</label>
+                            <label htmlFor='avatar_upload'>Foto</label>
                             <div className='d-flex align-items-center'>
                                 <div>
                                     <figure className='avatar mr-3 item-rtl'>
@@ -121,7 +121,7 @@ export const UpdateProfile = () => {
 
                                     />
                                     <label className='custom-file-label' htmlFor='customFile'>
-                                        Elija un avatar
+                                        Elija una foto
                                     </label>
                                 </div>
                             </div>
