@@ -104,7 +104,7 @@ export const Register = () => {
                         </div>
 
                         <div className='form-group'>
-                            <label htmlFor='avatar_upload'>Foto</label>
+                            <label htmlFor='avatar_upload'>Avatar</label>
                             <div className='d-flex align-items-center'>
                                 <div>
                                     <figure className='avatar mr-3 item-rtl'>
@@ -124,7 +124,7 @@ export const Register = () => {
                                         onChange={onChange}
                                     />
                                     <label className='custom-file-label' htmlFor='customFile'>
-                                        Escoger Foto
+                                        Escoger Avatar
                                     </label>
                                 </div>
                             </div>

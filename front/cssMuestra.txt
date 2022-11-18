@@ -39,7 +39,7 @@ nav {
   width: 90%;
   margin-right: 35%;
 }
-f
+
 #search_field {
   height: 2.4rem;
   padding: 1rem;
@@ -484,13 +484,12 @@ footer {
 
 .sidebar-wrapper {
   display: flex;
-  width: 200px;
+  width: 100%;
   align-items: stretch;
   min-height: 100vh;
   font-weight: normal;
 
   margin-top: 0;
-  margin-left: -85px;
   height: 100%;
   left: 0;
   top: 0;
@@ -504,7 +503,7 @@ footer {
   transition: all 0.3s;
 }
 #sidebar.active {
-  margin-left: 0px;
+  margin-left: -250px;
 }
 
 #sidebar .sidebar-header {
