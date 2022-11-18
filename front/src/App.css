@@ -26,13 +26,18 @@ body {
   border-radius: 5px;
 }
 
+#logo_size {
+  width: 150px;
+}
+
 nav {
   background-color: #232f3e;
   padding: 1rem 1rem;
 }
 
 #search_btn {
-  background-color: #febd69;
+  background-color: #22159b;
+  color: white;
 }
 
 .input-group {
@@ -47,9 +52,8 @@ f
 
 #login_btn,
 #view_btn {
-  background-color: #febd69;
+  background-color: #22159b;
   padding: 0.4rem 1.8rem;
-  font-family: calibri;
 }
 
 #cart {
@@ -58,10 +62,10 @@ f
 }
 
 #cart_count {
-  background-color: #febd69;
+  background-color: #22159b;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
-  color: black;
+  color: rgb(251, 250, 250);
   font-weight: bold;
   font-size: 0.9rem;
 }
@@ -93,7 +97,7 @@ f
 }
 
 #view_btn {
-  background-color: #fa9c23;
+  background-color: #22159b;
   color: white;
 }
 
@@ -162,7 +166,7 @@ footer {
 #cart_btn,
 #review_btn {
   border-radius: 2rem;
-  background-color: #fa9c23;
+  background-color: #22159b;
   border: none;
   padding: 0.5rem 2rem;
 }
@@ -207,8 +211,8 @@ footer {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fa9c23;
-  border-color: #fa9c23 transparent;
+  border: 6px solid  #22159b;
+  border-color:  #22159b transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -247,15 +251,15 @@ footer {
 
 #checkout_btn,
 .review-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #22159b;
+  border-color: #22159b;
   margin-top: 2rem;
   border-radius: 5rem;
 }
 
 #view_order_details {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #22159b;
+  border-color:  #22159b;
 }
 
 #order_summary {
@@ -307,8 +311,8 @@ footer {
 }
 
 .wrapper form .btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #22159b;
+  border-color: #22159b;
   color: white;
   margin-top: 2.5rem;
 }
@@ -387,7 +391,7 @@ footer {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #22159b;
   color: #fff;
 }
 
@@ -395,7 +399,7 @@ footer {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid #22159b;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -403,9 +407,9 @@ footer {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
+  border-top: 20px solid #22159b;
   border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  border-bottom: 20px solid #22159b;
   margin-right: -1px;
 }
 
