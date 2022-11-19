@@ -40,7 +40,7 @@ export const Profile = () => {
                                 </Link>
                             )}
 
-                            <Link to="/password/update" className="btn btn-primary btn-block mt-3">
+                            <Link to="/password/update" id="edit_profile" className="btn btn-primary btn-block mt-3">
                                 Cambiar contraseña
                             </Link>
                         </div>

@@ -167,7 +167,7 @@ footer {
 #cart_btn,
 #review_btn {
   border-radius: 2rem;
-  background-color: #22159b;
+  background-color: #0d8f4e;
   border: none;
   padding: 0.5rem 2rem;
 }
@@ -245,15 +245,15 @@ footer {
 }
 
 #card_item_price {
-  color: #febd69;
+  color: #0e0904;
   font-weight: bold;
   font-size: 1.4rem;
 }
 
 #checkout_btn,
 .review-btn {
-  background-color: #22159b;
-  border-color: #22159b;
+  background-color: #0d8f4e;
+  border-color: #0d8f4e;
   margin-top: 2rem;
   border-radius: 5rem;
 }
