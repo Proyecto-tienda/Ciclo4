@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Carousel } from 'react-bootstrap'
 import MetaData from '../layout/MetaData'
-import { useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,37 +11,36 @@ import { NEW_REVIEW_RESET } from '../../constants/productConstants'
 import ListReviews from '../order/ListReviews'
 
 export const ProductDetails = () => {
-    const params= useParams();
-    const [quantity, setQuantity] = useState(1)
-    const [rating, setRating] = useState(0);
+  const params = useParams();
+  const [quantity, setQuantity] = useState(1)
 
 
-    const dispatch = useDispatch();
-    const alert = useAlert();
 
-    const { loading, error, product } = useSelector(state => state.productDetails)
-    const { user } = useSelector(state => state.auth)
-    const { error: reviewError, success } = useSelector(state => state.newReview)
+  const dispatch = useDispatch();
+  const alert = useAlert();
 
-    useEffect(() => {
-        dispatch(getProductDetails(params.id))
+  const { loading, error, product } = useSelector(state => state.productDetails)
+  const { error: reviewError, success } = useSelector(state => state.newReview)
 
-        if (error) {
-            alert.error(error);
-            dispatch(clearErrors())
-        }
+  useEffect(() => {
+    dispatch(getProductDetails(params.id))
 
-        if (reviewError) {
-            alert.error(reviewError);
-            dispatch(clearErrors())
-        }
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors())
+    }
 
-        if (success) {
-            alert.success('Opinion registrada correctamente')
-            dispatch({ type: NEW_REVIEW_RESET })
-        }
+    if (reviewError) {
+      alert.error(reviewError);
+      dispatch(clearErrors())
+    }
 
-    }, [dispatch, alert, error, reviewError, params.id, success])
+    if (success) {
+      alert.success('Opinion registrada correctamente')
+      dispatch({ type: NEW_REVIEW_RESET })
+    }
+
+  }, [dispatch, alert, error, reviewError, params.id, success])
 
   const increaseQty = () => {
     const contador = document.querySelector('.count')
@@ -66,47 +65,9 @@ export const ProductDetails = () => {
     alert.success('Producto agregado al carro')
   }
 
-  function setUserRatings() {
-    const stars = document.querySelectorAll('.star');
 
-    stars.forEach((star, index) => {
-      star.starValue = index + 1;
-
-      ['click', 'mouseover', 'mouseout'].forEach(function (e) {
-        star.addEventListener(e, showRatings);
-      })
-    })
-
-    function showRatings(e) {
-      stars.forEach((star, index) => {
-        if (e.type === 'click') {
-          if (index < this.starValue) {
-            star.classList.add('orange');
-
-            setRating(this.starValue)
-          } else {
-            star.classList.remove('orange')
-          }
-        }
-
-        if (e.type === 'mouseover') {
-          if (index < this.starValue) {
-            star.classList.add('yellow');
-          } else {
-            star.classList.remove('yellow')
-          }
-        }
-
-        if (e.type === 'mouseout') {
-          star.classList.remove('yellow')
-        }
-      })
-    }
-  }
   const reviewHandler = () => {
     const formData = new FormData();
-
-    formData.set('rating', rating);
     // formData.set('comentario', comentario);
     formData.set('idProducto', params.id);
 
@@ -148,6 +109,8 @@ export const ProductDetails = () => {
               <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.inventario === 0} onClick={addToCart}>Agregar al Carrito</button>
               <hr />
               <p>Estado: <span id="stock_stado" className={product.inventario > 0 ? 'greenColor' : 'redColor'}>{product.inventario > 0 ? "En existencia" : "Agotado"}</span></p>
+              <hr />
+              <p id="categoria">Categoria: <strong>{product.categoria}</strong></p>
               <hr />
               <h4 className="mt-2">Descripción:</h4>
               <p>{product.descripcion}</p>
@@ -203,8 +166,8 @@ export const ProductDetails = () => {
             </div>
           </div>
           {product.opiniones && product.opiniones.length > 0 && (
-                        <ListReviews opiniones={product.opiniones} />
-                    )}
+            <ListReviews opiniones={product.opiniones} />
+          )}
         </Fragment>
       )}
     </Fragment>
