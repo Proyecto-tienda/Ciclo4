@@ -5,13 +5,12 @@ import { getProducts } from '../actions/productActions'
 import { useParams, Link } from 'react-router-dom'
 import { useAlert } from 'react-alert'
 import Pagination from 'react-js-pagination'
-import Slider from "rc-slider"
 import 'rc-slider/assets/index.css'
 
 export const Home = () => {
     const params = useParams();
     const keyword = params.keyword;
-    const [precio, setPrecio] = useState([100, 1000000])
+    const [precio] = useState([100, 1000000])
     const [currentPage, setCurrentPage] = useState(1)
     const { loading, products, error, resPerPage, productsCount } = useSelector(state => state.products)
     const alert = useAlert();
@@ -38,7 +37,7 @@ export const Home = () => {
 
                     <section id="productos" className='container mt-5'>
                         <div className='row'>
-                            <Slider
+                            {/* <Slider
                                 range
                                 className='t-slider'
                                 marks={{
@@ -56,7 +55,7 @@ export const Home = () => {
                                 }}
                                 value={precio}
                                 onChange={precio => setPrecio(precio)}
-                            ></Slider>
+                            ></Slider> */}
 
                             {products && products.map(producto => (
                                 <div key={producto._id} className='col-sm-12 col-md-6 col-lg-3 my-3'>
