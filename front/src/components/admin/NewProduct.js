@@ -21,13 +21,14 @@ const NewProduct = () => {
     const [imagenPreview, setImagenPreview] = useState([])
 
     const categorias = [
-        "Alimento seco",
-        "Alimento humedo",
-        "Accesorios",
-        "Cuidado e Higiene",
-        "Medicamentos",
-        "Snacks",
-        "Juguetes"
+        "Neveras",
+        "Lavadoras",
+        "Licuadoras",
+        "Batidoras",
+        "Sanducheras",
+        "Televisores",
+        "Equipos de sonido",
+        "Estufas"
     ]
 
     const alert = useAlert();
@@ -94,11 +95,12 @@ const NewProduct = () => {
         <Fragment>
             <MetaData title={'Nuevo Producto'} />
             <div className="row">
-                <div className="col-12 col-md-2">
+                <div className="col-12 col-md-12">
                     <Sidebar />
                 </div>
-
-                <div className="col-12 col-md-10">
+            </div>
+            <div className="row">
+                <div className="col-12 col-md-12">
                     <Fragment>
                         <div className="wrapper my-5">
                             <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>

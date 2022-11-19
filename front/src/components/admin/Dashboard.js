@@ -34,11 +34,13 @@ const Dashboard = () => {
     return (
         <Fragment>
             <div className="row">
-                <div className="col-12 col-md-2">
+                <div className="col-12 col-md-12">
                     <Sidebar />
                 </div>
+            </div>
 
-                <div className="col-12 col-md-10">
+            <div className="row">
+                <div className="col-12 col-md-12">
                     <h1 className="my-4">Tablero de Información</h1>
 
                     {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
