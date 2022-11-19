@@ -16,7 +16,7 @@ const NewProduct = () => {
     const [descripcion, setDescripcion] = useState('');
     const [categoria, setCategoria] = useState('');
     const [inventario, setInventario] = useState(0);
-    const [vendedor, setVendedor] = useState('');
+    // const [vendedor, setVendedor] = useState('');
     const [imagen, setImagen] = useState([]);
     const [imagenPreview, setImagenPreview] = useState([])
 
@@ -60,7 +60,7 @@ const NewProduct = () => {
         formData.set('descripcion', descripcion);
         formData.set('categoria', categoria);
         formData.set('inventario', inventario);
-        formData.set('vendedor', vendedor);
+        // formData.set('vendedor', vendedor);
 
         imagen.forEach(img => {
             formData.append('imagen', img)
@@ -159,7 +159,7 @@ const NewProduct = () => {
                                     />
                                 </div>
 
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <label htmlFor="seller_field">Vendedor</label>
                                     <input
                                         type="text"
@@ -168,7 +168,7 @@ const NewProduct = () => {
                                         value={vendedor}
                                         onChange={(e) => setVendedor(e.target.value)}
                                     />
-                                </div>
+                                </div> */}
 
                                 <div className='form-group'>
                                     <label>Imágenes</label>

@@ -52,11 +52,11 @@ const ProductsList = () => {
                     field: 'inventario',
                     sort: 'asc'
                 },
-                {
-                    label: 'Vendedor',
-                    field: 'vendedor',
-                    sort: 'asc'
-                },
+                // {
+                //     label: 'Vendedor',
+                //     field: 'vendedor',
+                //     sort: 'asc'
+                // },
                 {
                     label: 'Acciones',
                     field: 'acciones',
@@ -69,7 +69,7 @@ const ProductsList = () => {
                 nombre: product.nombre,
                 precio: `$${product.precio}`,
                 inventario: product.inventario,
-                vendedor: product.vendedor,
+                // vendedor: product.vendedor,
                 acciones: <Fragment>
                     <Link to={`/producto/${product._id}`} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-eye"></i>

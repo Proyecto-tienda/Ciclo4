@@ -49,10 +49,10 @@ const productosSchema=mongoose.Schema({
             ]
         }
     },
-    vendedor:{
-        type:String,
-        required:[true,"Por favor registre el vendedor de producto"]
-    },
+    // vendedor:{
+    //     type:String,
+    //     required:[true,"Por favor registre el vendedor de producto"]
+    // },
     inventario:{
         type: Number,
         required:[true, "Por favor registre el stock del producto"],
