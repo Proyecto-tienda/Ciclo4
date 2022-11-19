@@ -44,7 +44,8 @@ const productosSchema=mongoose.Schema({
                 "Batidoras",
                 "Sanducheras",
                 "Televisores",
-                "Equipos de sonido"
+                "Equipos de sonido",
+                "Estufas"
             ]
         }
     },

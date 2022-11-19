@@ -55,11 +55,12 @@ export const ProcessOrder = () => {
         <Fragment>
             <MetaData title={`Procesar Orden # ${order && order._id}`} />
             <div className="row">
-                <div className="col-12 col-md-2">
+                <div className="col-12 col-md-12">
                     <Sidebar />
                 </div>
-
-                <div className="col-12 col-md-10">
+            </div>
+            <div className="row">
+                <div className="col-12 col-md-12">
                     <Fragment>
                         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                             <div className="row d-flex justify-content-around">
